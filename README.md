@@ -83,6 +83,12 @@ Download from [LoveDA GitHub](https://github.com/Junjue-Wang/LoveDA)
 
 **Classes (7)**: Background, Building, Road, Water, Barren, Forest, Agricultural
 
+
+<p align="center">
+  <img src="assets/train-img.png" alt="Training images" width="800"/>
+</p>
+
+
 ### Data Structure
 
 ```
