@@ -1,0 +1,48 @@
+# ISPRS SoRA Experiment Configuration
+# Domain Generalization: Vaihingen → Potsdam
+
+experiment:
+  name: "isprs_sora_v2p"
+  description: "SoRA adaptation on ISPRS V2P domain shift"
+
+model:
+  backbone: "vit_small_plus_patch16_dinov3.lvd1689m"
+  method: "sora"
+  config: "L3"  # r=16, alpha=32, targets=[qkv, proj]
+  
+dataset:
+  name: "isprs"
+  scenario: "V2P"  # Vaihingen → Potsdam
+  num_classes: 6
+  img_size: 512
+  
+  paths:
+    train_img: "data/vaihingen_irrg/img_dir/train"
+    train_mask: "data/vaihingen_irrg/ann_dir/train"
+    val_img: "data/vaihingen_irrg/img_dir/val"
+    val_mask: "data/vaihingen_irrg/ann_dir/val"
+    test_img: "data/potsdam_rgb/img_dir/val"
+    test_mask: "data/potsdam_rgb/ann_dir/val"
+
+training:
+  batch_size: 8
+  epochs: 10
+  lr: 0.0002
+  weight_decay: 0.01
+  scheduler: "cosine"
+  patience: 10
+  
+augmentation:
+  grid_search: true
+  alpha_p_values: [0.0, 0.2, 0.5, 0.8]
+  alpha_g_values: [0.0, 15.0, 45.0, 90.0]
+
+evaluation:
+  seeds: [42, 123, 456]
+  metrics: ["miou", "oa", "f1"]
+  per_class: true
+
+output:
+  dir: "outputs/isprs_sora_v2p"
+  save_checkpoints: true
+  save_predictions: false
