@@ -4,26 +4,13 @@
 [![PyTorch 2.8](https://img.shields.io/badge/pytorch-2.8-red.svg)](https://pytorch.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This repository contains the official implementation for domain generalization experiments in remote sensing semantic segmentation, leveraging **DINOv3 Vision Foundation Models** with **Parameter-Efficient Fine-Tuning (PEFT)** strategies.
 
 <p align="center">
   <img src="assets/architecture.png" alt="Architecture Overview" width="800"/>
 </p>
 
-## 📋 Table of Contents
 
-- [Overview](#-overview)
-- [Key Features](#-key-features)
-- [Installation](#-installation)
-- [Datasets](#-datasets)
-- [Project Structure](#-project-structure)
-- [Usage](#-usage)
-- [Experiments](#-experiments)
-- [Results](#-results)
-- [Citation](#-citation)
-- [Acknowledgments](#-acknowledgments)
-
-## 🔍 Overview
+## Overview
 
 Domain shift is a critical challenge in remote sensing: models trained on imagery from one geographic region or sensor often suffer substantial performance degradation when deployed in different environments. This project systematically investigates how to effectively leverage vision foundation models for cross-domain semantic segmentation.
 
@@ -33,7 +20,7 @@ Domain shift is a critical challenge in remote sensing: models trained on imager
 2. Which parameter-efficient fine-tuning strategies best preserve pretrained representations while enabling task-specific adaptation?
 3. How do photometric vs. geometric augmentations differentially impact cross-domain robustness?
 
-## ✨ Key Features
+##  Key Features
 
 - **Vision Foundation Model**: DINOv3 ViT-S+ backbone with multi-scale feature extraction
 - **Parameter-Efficient Fine-Tuning Methods**:
@@ -82,7 +69,7 @@ model = timm.create_model('vit_small_plus_patch16_dinov3.lvd1689m', pretrained=T
 print("DINOv3 loaded successfully!")
 ```
 
-## 📊 Datasets
+##  Datasets
 
 ### ISPRS Semantic Labeling
 
@@ -120,48 +107,6 @@ data/
         ├── Urban/
         └── Rural/
 ```
-
-## 📁 Project Structure
-
-```
-domain-generalization-remote-sensing/
-├── configs/                    # Configuration files
-│   ├── peft/
-│   │   ├── lora.yaml
-│   │   ├── sora.yaml
-│   │   └── reins.yaml
-│   └── experiments/
-├── src/
-│   ├── models/
-│   │   ├── __init__.py
-│   │   ├── backbone.py         # DINOv3 feature extractor
-│   │   ├── decoder.py          # SegFormer decoder
-│   │   ├── lora.py             # LoRA implementation
-│   │   ├── sora.py             # SoRA/SoMA implementation
-│   │   └── reins.py            # LoRAReins implementation
-│   ├── data/
-│   │   ├── __init__.py
-│   │   ├── isprs.py            # ISPRS dataset loader
-│   │   └── loveda.py           # LoveDA dataset loader
-│   ├── utils/
-│   │   ├── metrics.py          # IoU, F1, OA computation
-│   │   ├── augmentation.py     # Photometric & geometric augs
-│   │   └── visualization.py
-│   └── train.py                # Training script
-├── experiments/
-│   ├── isprs_sora_gridsearch.py
-│   ├── isprs_reins_gridsearch.py
-│   ├── loveda_sora_gridsearch.py
-│   └── loveda_reins_gridsearch.py
-├── notebooks/
-│   ├── analysis.ipynb
-│   └── visualization.ipynb
-├── assets/
-├── environment.yml
-├── requirements.txt
-└── README.md
-```
-
 ##  Usage
 
 ### Quick Start
@@ -186,7 +131,7 @@ python experiments/loveda_reins_gridsearch.py \
 - [ISPRS](https://www.isprs.org/) for the ISPRS datasets
 - [LoveDA](https://github.com/Junjue-Wang/LoveDA) for the LoveDA dataset
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
