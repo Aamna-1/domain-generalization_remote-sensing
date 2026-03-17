@@ -182,10 +182,9 @@ python experiments/loveda_reins_gridsearch.py \
 
 ## Acknowledgments
 
-- [DINOv3](https://github.com/facebookresearch/dinov2) for the vision foundation model
-- [timm](https://github.com/huggingface/pytorch-image-models) for model implementations
-- [ISPRS](https://www.isprs.org/) for the Potsdam and Vaihingen datasets
-- [LoveDA](https://github.com/Junjue-Wang/LoveDA) for the benchmark dataset
+- [DINOv3](https://github.com/facebookresearch/dinov3) for the vision foundation model
+- [ISPRS](https://www.isprs.org/) for the ISPRS datasets
+- [LoveDA](https://github.com/Junjue-Wang/LoveDA) for the LoveDA dataset
 
 ## 📄 License
 
