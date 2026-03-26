@@ -73,7 +73,7 @@ print("DINOv3 loaded successfully!")
 
 ### ISPRS Semantic Labeling
 
-Download from [ISPRS 2D Semantic Labeling Contest](https://www.isprs.org/education/benchmarks/UrbanSemLab/default.aspx) |
+Download from [ISPRS 2D Semantic Labeling Contest](https://www.isprs.org/education/benchmarks/UrbanSemLab/default.aspx) 
 
 **Classes (6)**: Impervious surfaces, Buildings, Low vegetation, Trees, Cars, Clutter/background
 
